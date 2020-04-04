@@ -13,7 +13,7 @@ def index(request):
     if form.is_valid():
         form.save()
 
-    ls=request.POST.get("todo")
+    # ls=request.POST.get("todo")
     # todolist=Todo.objects.create(text=ls)
     # print(Todo.objects.all().count())
     # context={'form':form}
@@ -34,8 +34,8 @@ def todolist(request):
     # context={'ls':ls,
     #          'todolist':todolist,}
     render(request,'todo_app/todolist.html',context)
-    # return HttpResponseRedirect("/")
-    # render(request,'todo_app/todolist.html',context)
+    return HttpResponseRedirect("/")
+    render(request,'todo_app/todolist.html',context)
 
 
 def delete_todo(request,todo_id):
